@@ -1,6 +1,6 @@
 {
-  "name": "singlepage",
-  "description": "single page app using grunt & bower",
+  "name": "angallery",
+  "description": "",
   "version": "0.0.1",
   "license": "MIT",
   "engines": {
@@ -8,7 +8,7 @@
   },
   "repository": {
       "type": "git",
-      "url": "https://github.com/reneaigle/singlepage"
+      "url": "https://github.com/reneaigle/angallery"
   },
   "devDependencies": {
     "bower": "~1.3.1",

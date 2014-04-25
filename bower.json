@@ -1,11 +1,11 @@
 {
-  "name": "singlepage",
+  "name": "angallery",
   "version": "0.0.1",
-  "homepage": "https://github.com/reneaigle/singlepage",
+  "homepage": "https://github.com/reneaigle/angallery",
   "authors": [
     "reneaigle <reneaigle@gmail.com>"
   ],
-  "description": "single page app using grunt & bower",
+  "description": "",
   "main": "build/index.html",
   "moduleType": [
     "node"

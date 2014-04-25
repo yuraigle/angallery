@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Angular</title>
+    <meta name="description" content="my first awesome angular app">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link rel="icon" type="image/x-icon" href="./img/favicon.ico" />
+    <link rel="stylesheet" href="./css/main.min.css">
+
+<script type="text/ng-template" id="partials/home.html">
+<ul class="table-view">
+  <li class="table-view-cell media" ng-repeat="pic in pictures">
+    <a class="navigate-right" href="#/details/{{pic._id.$oid}}">
+      <img class="media-object pull-left" ng-src="img/80/{{pic.src}}">
+      <div class="media-body">
+        {{pic.title}}
+        <p>{{pic.summary}}</p>
+      </div>
+    </a>
+  </li>
+</ul>
+</script>
+
+<script type="text/ng-template" id="partials/details.html">
+<div ng-switch="isLoading()">
+  <div class="loading" ng-switch-when="true"></div>
+  <div class="image-details" ng-switch-when="false">
+      <h1>{{picture.title}}</h1>
+      <img ng-src="img/800/{{picture.src}}" alt="" />
+      <p class="desc">{{picture.summary}}</p>
+  </div>
+</div>
+</script>
+
+<script type="text/ng-template" id="partials/add.html">
+<p>This is the partial for view 2.</p>
+<p>
+  Showing of 'interpolate' filter:
+  {{ 'Current version is v%VERSION%.' | interpolate }}
+</p>
+</script>
+
+</head>
+<body ng-controller="MainCtrl">
+
+  <header class="bar bar-nav">
+    <a class="icon icon-left-nav pull-left" href="#/home" ng-hide="noback()"></a>
+    <h1 class="title">Earth Porn</h1>
+  </header>
+
+  <div class="content" ng-view></div>
+
+  <nav class="bar bar-tab">
+    <a class="tab-item" ng:class="{active: isActive('/home')}" href="#/home">
+      <span class="icon icon-home"></span>
+      <span class="tab-label">Home</span>
+    </a>
+    <a class="tab-item" ng:class="{active: isActive('/add')}" href="#/add">
+      <span class="icon icon-compose"></span>
+      <span class="tab-label">Post</span>
+    </a>
+  </nav>
+
+  <script src="./js/main.min.js"></script>
+
+</body>
+</html>

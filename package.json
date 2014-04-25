@@ -1,0 +1,32 @@
+{
+  "name": "singlepage",
+  "description": "single page app using grunt & bower",
+  "version": "0.0.1",
+  "license": "MIT",
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "repository": {
+      "type": "git",
+      "url": "https://github.com/reneaigle/singlepage"
+  },
+  "devDependencies": {
+    "bower": "~1.3.1",
+    "grunt": "~0.4.2",
+    "grunt-cli": "*",
+    "grunt-contrib-jshint": "~0.7.2",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-contrib-qunit": "~0.3.0",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-uglify": "~0.2.7",
+    "grunt-contrib-htmlmin": "*",
+    "grunt-contrib-copy": "*",
+    "grunt-recess": "*",
+    "coffee-script": "~1.7.1",
+    "grunt-contrib-coffee": "*",
+    "grunt-responsive-images": "*"
+  },
+  "scripts": {
+    "start": "node_modules/.bin/grunt"
+  }
+}

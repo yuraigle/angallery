@@ -15,24 +15,31 @@ angular.module("myApp.controllers", [])
 
 .controller "ListCtrl", [
   "$scope"
-  "Picture"
-  ($scope, Picture) ->
-    $scope.pictures = Picture.query()
+  "ArticleFactory"
+  ($scope, ArticleFactory) ->
+    ArticleFactory.query (response) ->
+      $scope.articles = response.data
+      return
 ]
 
 .controller "DetailsCtrl", [
   "$scope"
   "$routeParams"
-  "Picture"
-  ($scope, $routeParams, Picture) ->
-    $scope.picture = Picture.get({id: $routeParams.id})
+  "ArticleFactory"
+  ($scope, $routeParams, ArticleFactory) ->
     $scope.isLoading = () ->
-      typeof $scope.picture.src is "undefined"
+      typeof $scope.article is "undefined"
+    ArticleFactory.get(
+      id: $routeParams.id,
+      (response) ->
+        $scope.article = response.data
+        return
+    ) 
 ]
 
 .controller "AddCtrl", [
   "$scope"
-  "Picture"
-  ($scope, Picture) ->
+  "ArticleFactory"
+  ($scope, ArticleFactory) ->
     
 ]

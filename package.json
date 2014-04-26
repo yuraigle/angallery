@@ -27,6 +27,6 @@
     "grunt-responsive-images": "*"
   },
   "scripts": {
-    "start": "node_modules/.bin/grunt"
+    "start": "node_modules/.bin/grunt && chromium-browser --window-size=320,600 --incognito build/index.html"
   }
 }

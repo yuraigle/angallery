@@ -30,8 +30,6 @@ module.exports = function(grunt) {
           'bower_components/angular/angular.min.js',
           'bower_components/angular-route/angular-route.min.js',
           'bower_components/angular-resource/angular-resource.min.js',
-          'bower_components/angularjs-mongolab/mongolab.js',
-          'bower_components/ratchet2/js/ratchet.min.js',
           'build/js/compiled.js'
         ],
         dest: 'build/js/main.min.js'
@@ -100,6 +98,20 @@ module.exports = function(grunt) {
 
           // include custom fonts from css framework
           {expand: true, flatten: true, src: ['bower_components/ratchet2/fonts/**'], dest: 'build/fonts/', filter: 'isFile'},
+
+          // copy dev js
+          {
+            expand: true, 
+            flatten: true, 
+            src: [
+              'bower_components/jquery/dist/jquery.js',
+              'bower_components/angular/angular.js',
+              'bower_components/angular-route/angular-route.js',
+              'bower_components/angular-resource/angular-resource.js',
+              'build/js/compiled.js'
+            ], 
+            dest: 'build/js/'
+          },
         ]
       }
     }

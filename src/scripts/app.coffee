@@ -1,7 +1,7 @@
 "use strict"
 myApp = angular.module("myApp", [
   "ngRoute"
-  "mongolabResource"
+  "ngResource"
   "myApp.filters"
   "myApp.services"
   "myApp.directives"
@@ -26,7 +26,3 @@ myApp = angular.module("myApp", [
 
   return
 )
-.constant "API_KEY", "VngbbSXPbOaZhGAqBSoyht6RUBb4s2Wl"
-.constant "DB_NAME", "pictures"
-.factory "Picture", ($mongolabResource) ->
-  $mongolabResource "pictures"

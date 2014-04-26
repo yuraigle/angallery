@@ -31,7 +31,6 @@
     "angular-loader": "1.2.x",
     "angular-mocks": "~1.2.15",
     "angular-resource": "*",
-    "angularjs-mongolab": "*",
     "ratchet2": "*"
   }
 }

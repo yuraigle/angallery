@@ -13,12 +13,13 @@
 
 <script type="text/ng-template" id="partials/home.html">
 <ul class="table-view">
-  <li class="table-view-cell media" ng-repeat="pic in pictures">
-    <a class="navigate-right" href="#/details/{{pic._id.$oid}}">
-      <img class="media-object pull-left" ng-src="img/80/{{pic.src}}">
+  <li class="table-view-cell media" ng-repeat="art in articles">
+    <a class="navigate-right" href="#/details/{{art.id}}">
+      <div class="media-object pull-left">
+        <img class="" ng-src="{{art.tmb_src}}">
+      </div>
       <div class="media-body">
-        {{pic.title}}
-        <p>{{pic.summary}}</p>
+        {{art.title}}
       </div>
     </a>
   </li>
@@ -29,19 +30,15 @@
 <div ng-switch="isLoading()">
   <div class="loading" ng-switch-when="true"></div>
   <div class="image-details" ng-switch-when="false">
-      <h1>{{picture.title}}</h1>
-      <img ng-src="img/800/{{picture.src}}" alt="" />
-      <p class="desc">{{picture.summary}}</p>
+      <h1>{{article.title}}</h1>
+      <img ng-src="{{article.full_src}}" alt="" />
+      <p class="desc">{{article.summary}}</p>
   </div>
 </div>
 </script>
 
 <script type="text/ng-template" id="partials/add.html">
 <p>This is the partial for view 2.</p>
-<p>
-  Showing of 'interpolate' filter:
-  {{ 'Current version is v%VERSION%.' | interpolate }}
-</p>
 </script>
 
 </head>
@@ -65,7 +62,13 @@
     </a>
   </nav>
 
-  <script src="./js/main.min.js"></script>
+  <!-- // <script src="./js/main.min.js"></script> -->
+
+  <script type="text/javascript" src="./js/jquery.js"></script>
+  <script type="text/javascript" src="./js/angular.js"></script>
+  <script type="text/javascript" src="./js/angular-route.js"></script>
+  <script type="text/javascript" src="./js/angular-resource.js"></script>
+  <script type="text/javascript" src="./js/compiled.js"></script>
 
 </body>
 </html>
